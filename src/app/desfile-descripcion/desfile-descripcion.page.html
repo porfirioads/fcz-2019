@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="darkgreen">
+    <ion-title>{{tituloPagina}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-flyer-blue">
+  <ion-card color="lightcream">
+    <ion-card-header>
+      <ion-card-title class="font-gotham">Desfile</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content no-margin="">
+      <p>
+        El Desfile y Encuentro de Danzas Tradicionales Zacatecanas se llevará a cabo el domingo 21 de abril de 2019,
+        saliendo del Monumento a González Ortega en el Parque Enrique Estrada y recorriendo diversas calles del Centro
+        Histórico para concluir en la Plazuela 450.
+      </p>
+
+      <br>
+
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <ion-img src="../../assets/img/desfile_1.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="../../assets/img/desfile_2.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+
+      <br>
+
+      <p>
+        El evento contará con la participación de 20 agrupaciones de danza tradicional y un aproximado de 600
+        participantes. Los músicos y danzantes son provenientes de 16 municipios: Villa González Ortega, Río Grande,
+        Pinos, Trancoso, Jalpa, Apozol, Jerez, Villa de Cos, Monte Escobedo, Teúl de González Ortega, Zacatecas,
+        Ojocaliente, Miguel Auza, Fresnillo, General Pánfilo Natera y Tabasco. Mostrando distintos géneros como danza de
+        matlachines, danza de pluma o palma, danza de indio, danza de caballitos, danza de pardos y tastoanes.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

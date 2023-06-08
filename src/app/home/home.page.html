@@ -1,0 +1,59 @@
+<!--<ion-header>-->
+  <!--<ion-toolbar color="darkgreen">-->
+    <!--<ion-title>-->
+      <!--FCZ 2019-->
+    <!--</ion-title>-->
+  <!--</ion-toolbar>-->
+<!--</ion-header>-->
+
+<!--
+Opción 1:
+Fondo: aquablue
+Botones: aguagreen
+Opina: lightred
+
+Opción 2:
+Fondo: lightred
+Botones: aguagreen
+Opina: aquablue
+-->
+
+<ion-content padding class="{{categoriaBgClass}}">
+  <br>
+  <br>
+  <img class="logo-image" src="assets/img/logo_fcz.png" alt="Logo FCZ"/>
+  <br>
+
+  <div class="cards-container">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col #col no-padding size="6" *ngFor="let categoria of categorias; let i = index">
+          <!--opacity-80 brightness-125-->
+          <ion-button
+            class="btn-menu h-auto ion-button-no-padding font-gotham font-large opacity-80 brightness-110"
+            color="{{btnColors[i % btnColors.length]}}"
+            expand="block"
+            routerLink="/{{categoria.link}}/{{categoria.id}}/{{categoria.nombre}}"
+            routerDirection="forward">
+            <ion-img [src]="categoria.icono" class="btn-image"
+                     (ionImgDidLoad)="imageLoaded(categoria.id)"></ion-img>
+          </ion-button>
+        </ion-col>
+        <ion-col #col no-padding [size]="6">
+          <div #btnContainer>
+            <!--opacity-80 brightness-125-->
+            <ion-button
+              #btn
+              class="btn-menu h-auto ion-button-no-padding font-gotham font-large opacity-80 brightness-110"
+              color="red"
+              expand="block"
+              href="https://fcz.culturazac.gob.mx">
+              <ion-img src="../../assets/img/categoria_sitioweb.png" class="btn-image"></ion-img>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -1,0 +1,177 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.btn-image {
+  width: 100%;
+  opacity: 1;
+}
+
+/*
+--------------------------------------------------------------------------------
+Estilos de fuentes
+--------------------------------------------------------------------------------
+*/
+
+@font-face {
+  font-family: "Gotham Bold";
+  src: url("assets/font/gotham-bold.ttf");
+}
+
+/*
+--------------------------------------------------------------------------------
+Estilos de elementos comunes a todas las pantallas
+--------------------------------------------------------------------------------
+*/
+
+.background-flyer-red{
+  --background: linear-gradient(rgba(209, 23, 37, .90), rgba(209, 23, 37, .90)),
+  url('assets/img/fondopantalla.jpg') no-repeat center center / cover;
+}
+
+.background-flyer-greenblue{
+  --background: linear-gradient(rgba(103, 204, 187, .90), rgba(103, 204, 187, .90)),
+  url('assets/img/fondopantalla.jpg') no-repeat center center / cover;
+}
+
+.background-flyer-darkgreen {
+  --background: linear-gradient(rgba(34, 68, 68, .90), rgba(34, 68, 68, .90)),
+  url('assets/img/fondopantalla.jpg') no-repeat center center / cover;
+}
+
+.background-flyer-blue {
+  --background: linear-gradient(rgba(66, 190, 202, .90), rgba(66, 190, 202, .90)),
+  url('assets/img/fondopantalla.jpg') no-repeat center center / cover;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.brightness-125 {
+  filter: brightness(125%);
+}
+
+.brightness-110 {
+  filter: brightness(110%);
+}
+
+.icon-h-100 {
+  height: 100%;
+}
+
+.img-loaded + ion-spinner {
+  display: none;
+}
+
+/*
+--------------------------------------------------------------------------------
+Estilos generales de las cards
+--------------------------------------------------------------------------------
+*/
+
+.cards-container {
+  line-height: 1pt;
+}
+
+/*
+--------------------------------------------------------------------------------
+Estilos de las text cards
+--------------------------------------------------------------------------------
+*/
+
+.font-gotham {
+  font-family: 'Gotham Bold', Arial, sans-serif;
+}
+
+.font-large {
+  font-size: 12pt;
+}
+
+.btn-menu {
+  margin: 1px;
+}
+
+.btn-large {
+  height: 70px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+/*
+--------------------------------------------------------------------------------
+Estilos de las flip cards
+--------------------------------------------------------------------------------
+*/
+
+/*
+The flip card container - set the width and height to whatever you want.
+We have added the border property to demonstrate that the flip itself goes out
+of the box on hover (remove perspective if you don't want the 3D effect
+*/
+.flip-card {
+  background-color: transparent;
+  width: 50%;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: inline-block;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: transparent;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.big-popover .popover-content {
+  width: 90%;
+  background-color: blue;
+}
+
+.text-justified {
+  text-align: justify;
+}

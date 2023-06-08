@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="darkgreen">
+    <ion-title>Eventos por fecha</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="{{categoriaBgClass}}">
+  <div class="cards-container">
+    <ion-grid no-padding class="ion-grid-7-cols">
+      <ion-row no-padding>
+        <ion-col no-padding size="1" *ngFor="let dia of diasValidos.nombresDias">
+          <ion-button
+            class="btn-menu btn-large font-gotham font-large brightness-125"
+            color="darkgreen"
+            expand="block">
+            {{dia}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+        <ion-col no-padding size="1" *ngFor="let vacio of diasValidos.vaciosIniciales"></ion-col>
+        <ion-col no-padding size="1" *ngFor="let dia of diasValidos.diasFila1; let i = index">
+          <ion-button
+            class="btn-menu btn-very-large font-gotham font-large opacity-80 brightness-125"
+            color="{{btnColors[i % (btnColors.length - 1)]}}"
+            expand="block"
+            routerLink="/eventos-lista/{{categoriaId}}/2019-04-{{dia}}" routerDirection="forward">
+            {{dia}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+        <ion-col no-padding size="1" *ngFor="let dia of diasValidos.diasFila2; let i = index">
+          <ion-button
+            class="btn-menu btn-very-large  font-gotham font-large opacity-80 brightness-125"
+            color="{{btnColors[(i + 2) % (btnColors.length - 1)]}}"
+            expand="block"
+            routerLink="/eventos-lista/{{categoriaId}}/2019-04-{{dia}}" routerDirection="forward">
+            {{dia}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+        <ion-col no-padding size="1" *ngFor="let dia of diasValidos.diasFila3; let i = index">
+          <ion-button
+            class="btn-menu btn-very-large  font-gotham font-large opacity-80 brightness-125"
+            color="{{btnColors[(i + 1) % (btnColors.length - 1)]}}"
+            expand="block"
+            routerLink="/eventos-lista/{{categoriaId}}/2019-04-{{dia}}" routerDirection="forward">
+            {{dia}}
+          </ion-button>
+        </ion-col>
+        <ion-col no-padding size="1" *ngFor="let vacio of diasValidos.vaciosFinales"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="darkgreen">
+    <ion-title>{{tituloPagina}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="{{categoriaBgClass}}">
+  <div class="cards-container">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col #col no-padding [size]="size" *ngFor="let categoria of categorias; let i = index">
+          <div #btnContainer>
+            <!--opacity-80 brightness-125-->
+            <ion-button
+              #btn
+              class="btn-menu h-auto font-gotham opacity-80 brightness-110"
+              color="{{btnColors[i % btnColors.length]}}"
+              expand="block"
+              routerLink="/{{categoria.link}}/{{categoria.id}}/{{categoria.nombre}}"
+              routerDirection="forward">
+              <ion-img [src]="categoria.icono" class="btn-image"></ion-img>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

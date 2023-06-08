@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="darkgreen">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{tituloPagina}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background-flyer-blue">
+
+  <!--
+  TODO: Mostrar otra imagen o un spinner mientras la foto del slide se carga
+        completamente.
+  -->
+
+  <div class="cards-container">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let pagina of paginasProgramaAcademico">
+        <ion-img [src]="pagina"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="darkgreen">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="calificarEvento()" *ngIf="eventoSeleccionado">
+        <ion-icon slot="icon-only" name="text"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{tituloPagina}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="{{categoriaBgClass}}" (click)="seleccionarEvento($event, 0)">
+
+  <ion-button
+    *ngIf="detalleSede"
+    class="btn-menu font-gotham font-large brightness-110"
+    color="red"
+    expand="block"
+    href="https://www.google.com/maps/search/?api=1&query={{detalleSede.lat}},{{detalleSede.lon}}">
+
+    <ion-icon name="pin"></ion-icon>
+    Ubicación
+  </ion-button>
+
+  <br>
+
+
+  <div class="cards-container">
+    <div #btn
+         *ngFor="let evento of eventos"
+         class="flip-card"
+         [attr.id]="'card' + evento.id"
+         [ngStyle]="{'height.px': btn.offsetWidth}">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <ion-img [src]="evento.tarjeta_frontal"
+                   (ionImgDidLoad)="imageLoaded(evento.id)"
+                   (click)="seleccionarEvento($event, evento.id)"></ion-img>
+        </div>
+        <div class="flip-card-back">
+          <ion-img [src]="evento.tarjeta_trasera"
+                   (ionImgDidLoad)="imageLoaded(evento.id)"
+                   (click)="seleccionarEvento($event, evento.id)"></ion-img>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
